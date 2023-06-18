@@ -1,27 +1,64 @@
 "use client";
 
+import { CSSProperties } from "react";
+
 import { CardNumber, CardSuit } from "@/app/_lib/entities";
-import styles from "./card.module.scss";
+
+import style from "./card.module.scss";
 
 type CardProps = {
+  position: number;
   number: CardNumber;
   suit: CardSuit;
+  isExtended: boolean;
 };
 
-function getSuitImage(number: CardNumber, suit: CardSuit) {
+function getBlackOrRed(suit: CardSuit) {
   switch (suit) {
     case "S":
-      return <span className={styles.black}>{number}&spades;</span>;
     case "C":
-      return <span className={styles.black}>{number}&clubs;</span>;
+      return `${style.card} ${style.black}`;
     case "H":
-      return <span className={styles.red}>{number}&hearts;</span>;
     case "D":
-      return <span className={styles.red}>{number}&diams;</span>;
+      return `${style.card} ${style.red}`;
     default:
       break;
   }
 }
-export function Card({ number, suit }: CardProps) {
-  return <div className={styles.card}>{getSuitImage(number, suit)}</div>;
+
+function getSuitImage(suit: CardSuit) {
+  switch (suit) {
+    case "S":
+      return <>&spades;</>;
+    case "C":
+      return <>&clubs;</>;
+    case "H":
+      return <>&hearts;</>;
+    case "D":
+      return <>&diams;</>;
+    default:
+      break;
+  }
+}
+
+export function Card({ position, number, suit, isExtended }: CardProps) {
+  const inlineStyle: CSSProperties | undefined = isExtended
+    ? undefined
+    : {
+        marginTop: position > 0 ? "-160px" : 0,
+        transform: `translateX(${position * 25}px)`,
+      };
+  return (
+    <div className={getBlackOrRed(suit)} style={inlineStyle}>
+      <div className={style.card_left}>
+        <span className={style.card_number}>{number}</span>
+        {getSuitImage(suit)}
+      </div>
+      <div className={style.card_center__suit}>{getSuitImage(suit)}</div>
+      <div className={style.card_right}>
+        <span className={style.card_number}>{number}</span>
+        {getSuitImage(suit)}
+      </div>
+    </div>
+  );
 }

@@ -1,7 +1,7 @@
 export type ShuffleType = "order" | "random";
 
 // Card Suit
-export const suitsArray = ["S", "C", "H", "D"] as const;
+export const suitsArray = ["S", "H", "C", "D"] as const;
 export type CardSuit = (typeof suitsArray)[number];
 
 // Card Number

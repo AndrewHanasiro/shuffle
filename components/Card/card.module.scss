@@ -1,12 +1,15 @@
 .card {
   background-color: white;
-  width: 10vmin;
-  height: 16vmin;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1vmin;
-  font-size: 3vmin;
+  width: 100px;
+  height: 160px;
+  display: grid;
+  padding: 10px;
+  grid-template-areas: "left center right";
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 100%;
+  border-radius: 10px;
+  font-size: 20px;
+  box-sizing: border-box;
 }
 
 .red {
@@ -15,4 +18,34 @@
 
 .black {
   color: black;
+}
+
+.card_left {
+  grid-area: left;
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+}
+
+.card_right {
+  grid-area: right;
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+  transform: rotateX(180deg);
+}
+
+.card_number {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+}
+
+.card_center {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+
+  &__suit {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
