@@ -1,0 +1,20 @@
+$red: #c70e0e;
+
+.button {
+  background-color: #c70e0e;
+  padding: 3vmin;
+  font-size: 3vmin;
+  border: 0;
+  border-radius: 3vmin;
+  color: white;
+  box-shadow: 0 1vmin 1vmin #3f3f3f;
+
+  &:hover {
+    background-color: lighten($red, 20%);
+  }
+
+  &:active {
+    transform: translateY(0.5vmin);
+    box-shadow: 0 0 1vmin #3f3f3f;
+  }
+}

@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4vmin;
+  align-items: center;
+  padding: 5vmin;
+  min-height: 100vh;
+  min-width: 100vw;
+  box-sizing: border-box;
+  background-image: url("../public/background.jpg");
+}
