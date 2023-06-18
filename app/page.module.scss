@@ -10,3 +10,11 @@
   box-sizing: border-box;
   background-image: url("../public/background.jpg");
 }
+
+.button_group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4vmin;
+  align-items: center;
+}

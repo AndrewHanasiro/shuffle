@@ -1,0 +1,9 @@
+*
+!/app
+!/components
+!/public
+!/styles
+!next.config.js
+!package-lock.json
+!package.json
+!tsconfig.json
