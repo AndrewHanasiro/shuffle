@@ -1,8 +1,18 @@
-.carddeck {
+.carddeck_extended {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 1vmin;
+  gap: 10px;
+  box-sizing: border-box;
+  transition: all 1s;
+}
+
+.carddeck {
+  width: 1375px;
+  overflow-x: auto;
+  transition: all 2s, transform 2s;
 }

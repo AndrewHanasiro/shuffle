@@ -36,6 +36,7 @@ export default function Home() {
     const list = await shuffle("order");
     setCardList(list);
   }
+
   return (
     <main className={styles.main}>
       <Suspense fallback={<p>Loading feed...</p>}>
