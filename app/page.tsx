@@ -29,7 +29,7 @@ export default function Home() {
 
   async function submit() {
     const list = await shuffle("random", cardList);
-    setCardList((_) => [...list]);
+    setCardList(list);
   }
 
   return (

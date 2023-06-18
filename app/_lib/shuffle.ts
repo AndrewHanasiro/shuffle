@@ -16,6 +16,7 @@ export async function shuffle(
   }
 }
 
+// Create an ordered deck
 function order(): Card[] {
   return suitsArray.reduce((output, current) => {
     const list = numberArray.map(
@@ -31,14 +32,12 @@ function order(): Card[] {
 
 // Fisher–Yates shuffle (https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 function random(currentOrder?: Card[]): Card[] {
-  if (!currentOrder) {
-    currentOrder = order();
-  }
-  for (let i = currentOrder.length - 1; i >= 0; i--) {
+  let list: Card[] = currentOrder ? [...currentOrder] : order();
+  for (let i = list.length - 1; i >= 0; i--) {
     const index = Math.floor(Math.random() * i);
-    const temp = currentOrder[i];
-    currentOrder[i] = currentOrder[index];
-    currentOrder[index] = temp;
+    const temp = list[i];
+    list[i] = list[index];
+    list[index] = temp;
   }
-  return currentOrder;
+  return list;
 }
