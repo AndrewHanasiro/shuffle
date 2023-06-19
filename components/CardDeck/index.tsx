@@ -12,7 +12,7 @@ type CardDeckProps = {
 };
 
 export function CardDeck({ deck }: CardDeckProps) {
-  const [isExtended, setIsExtended] = useState(false);
+  const [isExtended, setIsExtended] = useState(true);
 
   async function extend() {
     setIsExtended((old) => !old);

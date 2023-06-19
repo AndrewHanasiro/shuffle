@@ -30,7 +30,7 @@
   grid-area: right;
   text-orientation: upright;
   writing-mode: vertical-rl;
-  transform: rotateX(180deg);
+  transform: rotateY(180deg) rotateX(180deg);
 }
 
 .card_number {
