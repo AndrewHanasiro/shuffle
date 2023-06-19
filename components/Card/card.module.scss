@@ -49,3 +49,14 @@
     align-items: center;
   }
 }
+
+.card_back {
+  background-image: url("../../public/card_back.png");
+  background-color: #a81400;
+  background-repeat: repeat;
+  background-size: 50px 50px;
+  width: 100px;
+  height: 160px;
+  transform: rotateY(180deg);
+  transition: all 2s;
+}
